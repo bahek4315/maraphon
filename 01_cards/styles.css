@@ -6,6 +6,53 @@
 
 body {
   font-family: 'Muli', sans-serif;
+  background-color: cyan;
   overflow: hidden;
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+
+.slide {
+  height: 80vh;
+  border-radius: 20px;
+  margin: 20px;
+  cursor: pointer;
+  color: #fff;
+  flex: 1; /*первая цифра-flex-grow, вторая- flex-shrink, третья - flex-basis*/
+  background-size: cover; /*Масштабирует изображение как можно больше c сохранением пропорций изображения
+  (изображение не становится сплющенным). Когда изображение и контейнер имеют разные размеры, изображение
+  обрезается либо влево / вправо, либо сверху / снизу.*/
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /*Анимация ячейки*/
+  transition: all 500ms ease-in-out;
+}
+
+.slide h3 {
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3 {
+  opacity: 1;
+  /*Анимация текста*/
+  transition: opacity 0.3s ease-in 0.4s; /*какое св-во, сколько времени, какая функция, задержка */
 }
